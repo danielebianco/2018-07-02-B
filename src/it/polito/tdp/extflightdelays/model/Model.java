@@ -69,8 +69,10 @@ public class Model {
 			result.add(r);
 		}
 		
+		List<Airport> adiacenti = this.displayNeighbours(airport);
+		
 		for(AirportResult r : result) {
-			for(Airport a : this.displayNeighbours(airport)) {
+			for(Airport a : adiacenti) {
 				if(r.getA1().getId() == airport.getId() && a.getId() == r.getA2().getId()) {
 					output.add(r.getA2());
 				}
